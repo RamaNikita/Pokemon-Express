@@ -9,9 +9,22 @@ class Index extends React.Component {
   render() {
     const { pokemon } = this.props;
     return (
-      <div style={myStyle}>
-        <h1>My First React Component!</h1>
-      </div>
+      <>
+        {" "}
+        <div style={myStyle}>
+          <h1>My First React Component!</h1>
+        </div>
+        <ul>
+          {pokemon.map((pokemonName, i) => {
+            return (
+              <li>
+                {pokemonName.name.charAt(0).toUpperCase() +
+                  pokemonName.name.slice(1)}
+              </li>
+            );
+          })}
+        </ul>
+      </>
     );
   }
 }
