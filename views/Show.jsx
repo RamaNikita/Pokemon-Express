@@ -25,6 +25,7 @@ const myStyle2 = {
 class Show extends React.Component {
   render() {
     const pokemon = this.props.pokemon;
+    console.log(pokemon);
     return (
       <body style={myStyle}>
         <div style={myStyle2}>
@@ -34,7 +35,7 @@ class Show extends React.Component {
           </h2>
           <img
             style={myStyle2}
-            src={`${pokemon.img}.jpg`}
+            src={`http://img.pokemondb.net/artwork/${pokemon.name}.jpg`}
             alt={pokemon.name}
           ></img>
           <div>

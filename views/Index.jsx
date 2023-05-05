@@ -6,8 +6,11 @@ const myStyle = {
   // backgroundColor: "#125478",
   // height: "100px",
 };
-const bodyStyle = {
-  backgroundColor: "#768fc4",
+const aStyle = {
+  fontSize: "30px",
+  // textDecoration: "none",
+  color: "#145865",
+  textAlign: "center",
 };
 const ulStyle = {
   marginLeft: "40%",
@@ -24,11 +27,15 @@ class Index extends React.Component {
         <div style={myStyle}>
           <h1>'See All The Pokemon!'</h1>
         </div>
+        <a style={aStyle} href="/pokemon/new">
+          Add new Pokemon
+        </a>
         <ul style={ulStyle}>
           {pokemon.map((pokemonName, i) => {
+            console.log(pokemonName);
             return (
               <li key={i}>
-                <a href={`/pokemon/${i}`}>
+                <a href={`/pokemon/${pokemonName._id}`}>
                   {pokemonName.name.charAt(0).toUpperCase() +
                     pokemonName.name.slice(1)}
                 </a>
